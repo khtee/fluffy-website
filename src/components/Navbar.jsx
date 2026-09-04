@@ -22,18 +22,14 @@ export default function Navbar() {
           
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-pink to-brand-peach flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
-              <svg className="w-6 h-6 text-white" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 78C42 78 35 71 36 62C37 53 44 48 50 48C56 48 63 53 64 62C65 71 58 78 50 78Z" />
-                <circle cx="31" cy="41" r="7.5" />
-                <circle cx="44" cy="32" r="7.5" />
-                <circle cx="56" cy="32" r="7.5" />
-                <circle cx="69" cy="41" r="7.5" />
-              </svg>
-            </div>
+            <img
+              src="./images/logo.png"
+              alt="Fluffy Boarding Cat Hotel Logo"
+              className="w-12 h-12 rounded-2xl object-cover shadow-soft group-hover:scale-105 transition-transform border border-brand-pink-soft/60"
+            />
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-extrabold tracking-tight text-brand-charcoal group-hover:text-brand-pink transition-colors">
+                <span className="text-lg sm:text-xl font-extrabold tracking-tight text-brand-charcoal group-hover:text-brand-pink transition-colors">
                   Fluffy Boarding
                 </span>
                 <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-brand-pink-soft text-brand-pink">

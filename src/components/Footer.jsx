@@ -13,15 +13,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-brand-pink flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" viewBox="0 0 100 100" fill="currentColor">
-                  <path d="M50 78C42 78 35 71 36 62C37 53 44 48 50 48C56 48 63 53 64 62C65 71 58 78 50 78Z" />
-                  <circle cx="31" cy="41" r="7.5" />
-                  <circle cx="44" cy="32" r="7.5" />
-                  <circle cx="56" cy="32" r="7.5" />
-                  <circle cx="69" cy="41" r="7.5" />
-                </svg>
-              </div>
+              <img
+                src="./images/logo.png"
+                alt="Fluffy Boarding Logo"
+                className="w-12 h-12 rounded-2xl object-cover border border-white/20 shadow-md"
+              />
               <span className="text-xl font-black tracking-tight text-white">
                 Fluffy Boarding
               </span>

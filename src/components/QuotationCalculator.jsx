@@ -182,45 +182,45 @@ export default function QuotationCalculator({ preselectedRoom }) {
   }, [checkInDate])
 
   return (
-    <section id="calculator" className="py-20 bg-gradient-to-b from-white to-brand-cream-soft">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="calculator" className="py-16 sm:py-20 bg-gradient-to-b from-white to-brand-cream-soft overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 px-2">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-pink-light border border-brand-pink-soft text-brand-pink text-xs font-bold uppercase tracking-wider mb-3">
             <Calculator className="w-3.5 h-3.5" />
             <span>Instant Quotation Generator</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-charcoal tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-brand-charcoal tracking-tight">
             Estimate Your Stay & Book Directly on WhatsApp
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-brand-charcoal-muted">
+          <p className="mt-3 text-sm sm:text-base text-brand-charcoal-muted">
             Customize your dates, rooms, and number of cats. Review the instant transparent breakdown, then click to check availability with us on WhatsApp.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           
           {/* Left Column: Interactive Inputs */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-brand-cream-border shadow-elevated space-y-8">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-4 sm:p-6 lg:p-8 border border-brand-cream-border shadow-elevated space-y-6 sm:space-y-8 w-full min-w-0 overflow-hidden">
             
             {/* 1. Date Selection */}
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-base font-bold text-brand-charcoal flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-brand-pink" />
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3 sm:mb-4">
+                <h3 className="text-sm sm:text-base font-bold text-brand-charcoal flex items-center gap-2">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-brand-pink shrink-0" />
                   <span>1. Select Dates of Stay</span>
                 </h3>
                 {numberOfNights > 0 && (
-                  <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-brand-pink-soft text-brand-pink">
+                  <span className="text-xs font-extrabold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-brand-pink-soft text-brand-pink shrink-0">
                     {numberOfNights} Night{numberOfNights > 1 ? 's' : ''} Stay
                   </span>
                 )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal-muted mb-1.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="min-w-0">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal-muted mb-1">
                     Check-in Date
                   </label>
                   <input
@@ -237,15 +237,15 @@ export default function QuotationCalculator({ preselectedRoom }) {
                         setCheckOutDate(toDateInputValue(d))
                       }
                     }}
-                    className="w-full px-4 py-3 rounded-xl border border-brand-cream-border bg-brand-cream-soft/50 text-brand-charcoal font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-all"
+                    className="w-full max-w-full min-w-0 px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-brand-cream-border bg-brand-cream-soft/50 text-brand-charcoal font-semibold text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-all box-border"
                   />
-                  <span className="text-[11px] text-brand-charcoal-light mt-1 block">
+                  <span className="text-[10px] sm:text-[11px] text-brand-charcoal-light mt-1 block">
                     Check-in: 6:00 PM – 9:00 PM (Weekdays)
                   </span>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal-muted mb-1.5">
+                <div className="min-w-0">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal-muted mb-1">
                     Check-out Date
                   </label>
                   <input
@@ -253,9 +253,9 @@ export default function QuotationCalculator({ preselectedRoom }) {
                     min={minCheckOutDate}
                     value={checkOutDate}
                     onChange={(e) => setCheckOutDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-brand-cream-border bg-brand-cream-soft/50 text-brand-charcoal font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-all"
+                    className="w-full max-w-full min-w-0 px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-brand-cream-border bg-brand-cream-soft/50 text-brand-charcoal font-semibold text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-all box-border"
                   />
-                  <span className="text-[11px] text-brand-charcoal-light mt-1 block">
+                  <span className="text-[10px] sm:text-[11px] text-brand-charcoal-light mt-1 block">
                     Check-out: before 9:00 PM
                   </span>
                 </div>
@@ -264,17 +264,17 @@ export default function QuotationCalculator({ preselectedRoom }) {
 
             {/* 2. Room Configuration */}
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-base font-bold text-brand-charcoal flex items-center gap-2">
-                  <Cat className="w-5 h-5 text-brand-pink" />
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3 sm:mb-4">
+                <h3 className="text-sm sm:text-base font-bold text-brand-charcoal flex items-center gap-2">
+                  <Cat className="w-4 h-4 sm:w-5 sm:h-5 text-brand-pink shrink-0" />
                   <span>2. Room Setup & Number of Cats</span>
                 </h3>
-                <span className="text-xs text-brand-charcoal-muted">
+                <span className="text-xs text-brand-charcoal-muted shrink-0">
                   {rooms.length} Room{rooms.length > 1 ? 's' : ''} Selected
                 </span>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {rooms.map((room, index) => {
                   const maxCats = room.type === 'standard' ? 2 : 4
                   const baseRate = room.type === 'standard' ? 25 : 35
@@ -283,10 +283,10 @@ export default function QuotationCalculator({ preselectedRoom }) {
                   return (
                     <div
                       key={room.id}
-                      className="p-4 sm:p-5 rounded-2xl bg-brand-cream-soft/70 border border-brand-cream-border relative space-y-4"
+                      className="p-3.5 sm:p-5 rounded-2xl bg-brand-cream-soft/70 border border-brand-cream-border relative space-y-3 sm:space-y-4 min-w-0 overflow-hidden"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-extrabold uppercase tracking-wider text-brand-charcoal px-2.5 py-1 rounded-md bg-white border border-brand-cream-border">
+                        <span className="text-xs font-extrabold uppercase tracking-wider text-brand-charcoal px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-white border border-brand-cream-border">
                           Room {index + 1}
                         </span>
 
@@ -302,50 +302,50 @@ export default function QuotationCalculator({ preselectedRoom }) {
                         )}
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         {/* Room Type Selector */}
-                        <div>
+                        <div className="min-w-0">
                           <label className="block text-xs font-semibold text-brand-charcoal-muted mb-1">
                             Room Type
                           </label>
-                          <div className="grid grid-cols-2 gap-2">
+                          <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                             <button
                               type="button"
                               onClick={() => handleRoomTypeChange(index, 'standard')}
-                              className={`px-3 py-2.5 rounded-xl text-xs font-bold border transition-all text-center ${
+                              className={`px-2 py-2 sm:px-3 sm:py-2.5 rounded-xl text-xs font-bold border transition-all text-center min-w-0 ${
                                 isStandard
                                   ? 'bg-brand-pink text-white border-brand-pink shadow-sm'
                                   : 'bg-white text-brand-charcoal border-brand-cream-border hover:border-brand-pink/50'
                               }`}
                             >
-                              Standard
-                              <span className="block text-[10px] font-normal opacity-90">RM25 (1-2 cats)</span>
+                              <span className="block truncate">Standard</span>
+                              <span className="block text-[10px] font-normal opacity-90 truncate">RM25 (1-2)</span>
                             </button>
 
                             <button
                               type="button"
                               onClick={() => handleRoomTypeChange(index, 'deluxe')}
-                              className={`px-3 py-2.5 rounded-xl text-xs font-bold border transition-all text-center ${
+                              className={`px-2 py-2 sm:px-3 sm:py-2.5 rounded-xl text-xs font-bold border transition-all text-center min-w-0 ${
                                 !isStandard
                                   ? 'bg-brand-blue text-white border-brand-blue shadow-sm'
                                   : 'bg-white text-brand-charcoal border-brand-cream-border hover:border-brand-blue/50'
                               }`}
                             >
-                              Deluxe
-                              <span className="block text-[10px] font-normal opacity-90">RM35 (1-4 cats)</span>
+                              <span className="block truncate">Deluxe</span>
+                              <span className="block text-[10px] font-normal opacity-90 truncate">RM35 (1-4)</span>
                             </button>
                           </div>
                         </div>
 
                         {/* Number of Cats Selector */}
-                        <div>
+                        <div className="min-w-0">
                           <label className="block text-xs font-semibold text-brand-charcoal-muted mb-1">
-                            Number of Cats in this Room
+                            Number of Cats
                           </label>
                           <select
                             value={room.cats}
                             onChange={(e) => handleCatsChange(index, e.target.value)}
-                            className="w-full px-4 py-2.5 rounded-xl border border-brand-cream-border bg-white text-brand-charcoal font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink"
+                            className="w-full max-w-full min-w-0 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-brand-cream-border bg-white text-brand-charcoal font-bold text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink"
                           >
                             {Array.from({ length: maxCats }, (_, i) => i + 1).map((num) => (
                               <option key={num} value={num}>
@@ -360,9 +360,9 @@ export default function QuotationCalculator({ preselectedRoom }) {
                       </div>
 
                       {/* Room Pricing Sub-line */}
-                      <div className="pt-2 border-t border-brand-cream-border/60 flex items-center justify-between text-xs text-brand-charcoal-muted">
+                      <div className="pt-2 border-t border-brand-cream-border/60 flex flex-wrap items-center justify-between gap-1 text-xs text-brand-charcoal-muted">
                         <span>Nightly rate for this room:</span>
-                        <span className="font-bold text-brand-charcoal">
+                        <span className="font-bold text-brand-charcoal shrink-0">
                           RM {baseRate + Math.max(0, room.cats - 1) * 10} / night
                         </span>
                       </div>
@@ -376,7 +376,7 @@ export default function QuotationCalculator({ preselectedRoom }) {
                 <button
                   type="button"
                   onClick={handleAddRoom}
-                  className="mt-4 w-full py-3 px-4 rounded-xl border-2 border-dashed border-brand-pink/40 hover:border-brand-pink bg-brand-pink-light/30 hover:bg-brand-pink-light/60 text-brand-pink font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
+                  className="mt-3 sm:mt-4 w-full py-2.5 sm:py-3 px-4 rounded-xl border-2 border-dashed border-brand-pink/40 hover:border-brand-pink bg-brand-pink-light/30 hover:bg-brand-pink-light/60 text-brand-pink font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Add Another Room (Multi-Room Booking)</span>
@@ -385,87 +385,87 @@ export default function QuotationCalculator({ preselectedRoom }) {
             </div>
 
             {/* Information Notice */}
-            <div className="p-4 rounded-2xl bg-brand-cream-soft border border-brand-cream-border flex items-start gap-3 text-xs text-brand-charcoal-muted">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-brand-cream-soft border border-brand-cream-border flex items-start gap-2.5 sm:gap-3 text-xs text-brand-charcoal-muted leading-relaxed">
               <Info className="w-4 h-4 text-brand-pink shrink-0 mt-0.5" />
               <div>
-                <strong>How pricing is calculated:</strong> Standard Room base rate is RM25/night. Deluxe Room base rate is RM35/night. Each additional cat in the same room is +RM10/night. A 50% deposit is required to lock in the reservation.
+                <strong>How pricing works:</strong> Standard Room base rate is RM25/night. Deluxe Room base rate is RM35/night. Each additional cat in the same room is +RM10/night. A 50% deposit secures your reservation.
               </div>
             </div>
 
           </div>
 
           {/* Right Column: Instant Live Quotation Breakdown & WhatsApp Action */}
-          <div className="lg:col-span-5 sticky top-24">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-cream-border shadow-elevated space-y-6">
+          <div className="lg:col-span-5 sticky top-24 w-full min-w-0">
+            <div className="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 border border-brand-cream-border shadow-elevated space-y-5 sm:space-y-6 overflow-hidden">
               
-              <div className="flex items-center justify-between pb-4 border-b border-brand-cream-border">
-                <div>
-                  <h3 className="text-xl font-extrabold text-brand-charcoal">Quotation Summary</h3>
-                  <p className="text-xs text-brand-charcoal-muted">Fluffy Boarding • Sentul, KL</p>
+              <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-brand-cream-border">
+                <div className="min-w-0 pr-2">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-brand-charcoal truncate">Quotation Summary</h3>
+                  <p className="text-xs text-brand-charcoal-muted truncate">Fluffy Boarding • Sentul, KL</p>
                 </div>
-                <div className="w-10 h-10 rounded-2xl bg-brand-pink-soft flex items-center justify-center text-brand-pink">
-                  <Sparkles className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-brand-pink-soft flex items-center justify-center text-brand-pink shrink-0">
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
               </div>
 
               {/* Dates & Nights Overview */}
-              <div className="p-4 rounded-2xl bg-brand-cream-soft border border-brand-cream-border space-y-2">
-                <div className="flex justify-between text-xs font-semibold text-brand-charcoal">
-                  <span className="text-brand-charcoal-muted">Dates:</span>
-                  <span>{formatReadableDate(checkInDate)} → {formatReadableDate(checkOutDate)}</span>
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-brand-cream-soft border border-brand-cream-border space-y-2 text-xs font-semibold text-brand-charcoal">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-0.5 sm:gap-2">
+                  <span className="text-brand-charcoal-muted shrink-0">Dates:</span>
+                  <span className="text-brand-charcoal break-words">{formatReadableDate(checkInDate)} → {formatReadableDate(checkOutDate)}</span>
                 </div>
-                <div className="flex justify-between text-xs font-semibold text-brand-charcoal">
+                <div className="flex justify-between items-center pt-1 border-t border-brand-cream-border/50">
                   <span className="text-brand-charcoal-muted">Duration:</span>
                   <span className="font-bold text-brand-pink">{numberOfNights} Night{numberOfNights > 1 ? 's' : ''}</span>
                 </div>
               </div>
 
               {/* Line items for each room */}
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal-muted">Breakdown by Room:</h4>
                 {calculation.roomBreakdowns.map((r) => (
-                  <div key={r.roomIndex} className="flex items-center justify-between text-xs py-1.5 border-b border-dashed border-brand-cream-border">
-                    <div>
-                      <span className="font-bold text-brand-charcoal">Room {r.roomIndex} ({r.typeName})</span>
-                      <span className="block text-[11px] text-brand-charcoal-muted">
+                  <div key={r.roomIndex} className="flex items-start sm:items-center justify-between text-xs py-1.5 border-b border-dashed border-brand-cream-border gap-2">
+                    <div className="min-w-0 flex-1 pr-1">
+                      <span className="font-bold text-brand-charcoal block truncate">Room {r.roomIndex} ({r.typeName})</span>
+                      <span className="block text-[11px] text-brand-charcoal-muted truncate">
                         {r.cats} Cat{r.cats > 1 ? 's' : ''} • RM{r.ratePerNight}/nt × {numberOfNights} nts
                       </span>
                     </div>
-                    <span className="font-bold text-brand-charcoal">RM {r.roomTotal}</span>
+                    <span className="font-bold text-brand-charcoal shrink-0">RM {r.roomTotal}</span>
                   </div>
                 ))}
               </div>
 
               {/* Totals Section */}
-              <div className="pt-2 space-y-3">
+              <div className="pt-2 space-y-2.5 sm:space-y-3">
                 <div className="flex justify-between items-center text-sm font-semibold text-brand-charcoal">
-                  <span>Total Estimated Cost:</span>
-                  <span className="text-2xl font-black text-brand-charcoal">RM {calculation.totalAmount}</span>
+                  <span>Total Estimated:</span>
+                  <span className="text-xl sm:text-2xl font-black text-brand-charcoal shrink-0">RM {calculation.totalAmount}</span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-brand-pink-light border border-brand-pink-soft flex items-center justify-between">
-                  <div>
-                    <span className="text-xs font-bold text-brand-pink block">50% Deposit Required</span>
-                    <span className="text-[10px] text-brand-charcoal-muted">To secure your reservation</span>
+                <div className="p-3 sm:p-3.5 rounded-2xl bg-brand-pink-light border border-brand-pink-soft flex items-center justify-between gap-2">
+                  <div className="min-w-0 pr-1">
+                    <span className="text-xs font-bold text-brand-pink block truncate">50% Deposit Required</span>
+                    <span className="text-[10px] text-brand-charcoal-muted block truncate">To secure your reservation</span>
                   </div>
-                  <span className="text-lg font-black text-brand-pink">RM {calculation.depositRequired}</span>
+                  <span className="text-base sm:text-lg font-black text-brand-pink shrink-0">RM {calculation.depositRequired}</span>
                 </div>
 
-                <div className="flex justify-between text-xs text-brand-charcoal-muted px-1">
-                  <span>Balance payable at check-in:</span>
-                  <span className="font-semibold text-brand-charcoal">RM {calculation.balanceAtCheckIn}</span>
+                <div className="flex justify-between items-center text-xs text-brand-charcoal-muted px-1">
+                  <span>Balance at check-in:</span>
+                  <span className="font-semibold text-brand-charcoal shrink-0">RM {calculation.balanceAtCheckIn}</span>
                 </div>
               </div>
 
               {/* Direct WhatsApp Call to Action */}
-              <div className="pt-4 border-t border-brand-cream-border space-y-3">
+              <div className="pt-3 sm:pt-4 border-t border-brand-cream-border space-y-2.5 sm:space-y-3">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-extrabold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:py-4 rounded-2xl bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-extrabold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
                 >
-                  <MessageCircle className="w-5 h-5 fill-white" />
+                  <MessageCircle className="w-5 h-5 fill-white shrink-0" />
                   <span>Send Quote via WhatsApp</span>
                 </a>
 
@@ -476,19 +476,19 @@ export default function QuotationCalculator({ preselectedRoom }) {
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-green-600" />
+                      <Check className="w-4 h-4 text-green-600 shrink-0" />
                       <span className="text-green-600">Quotation Copied to Clipboard!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-brand-charcoal-muted" />
+                      <Copy className="w-4 h-4 text-brand-charcoal-muted shrink-0" />
                       <span>Copy Quotation Summary</span>
                     </>
                   )}
                 </button>
 
-                <p className="text-center text-[11px] text-brand-charcoal-muted">
-                  Direct WhatsApp: <a href="tel:+601154396129" className="font-semibold text-brand-charcoal underline">+60 11-5439 6129</a>. No commitment required.
+                <p className="text-center text-[10px] sm:text-[11px] text-brand-charcoal-muted">
+                  Direct WhatsApp: <a href="https://wa.me/601154396129" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-charcoal underline">+60 11-5439 6129</a>
                 </p>
               </div>
 
