@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF9;
+}
+::-webkit-scrollbar-thumb {
+  background: #FDBBB0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F45287;
+}
+
+/* Shimmer / pulse for WhatsApp button */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
